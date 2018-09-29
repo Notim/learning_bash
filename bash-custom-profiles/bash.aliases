@@ -4,7 +4,7 @@ alias sudo='sudo '
 function gitup(){
     date=$(date +%Y-%m-%d) && echo $date ;
     echo 'pulling from origin.. ' && git pull origin master ;
-    echo 'Status.. ' && git status ;
+    echo 'Status.. ' && git status -s;
     echo 'Add to stage area.. ' && git add --all;
     echo 'commiting.. ' && git commit -m "Up";    
     echo 'pushing.. ' && git push origin master ;
