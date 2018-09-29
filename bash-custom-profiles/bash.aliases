@@ -3,16 +3,20 @@ alias sudo='sudo '
 
 function gitup(){
     date=$(date +%Y-%m-%d) && echo $date ;
-    echo 'pulling from origin.. ' && git pull origin master ;
-    echo 'Status.. ' && git status -s;
-    echo 'Add to stage area.. ' && git add --all;
-    echo 'commiting.. ' && git commit -m "Up";    
-    echo 'pushing.. ' && git push origin master ;
     
-    echo "setting user authentication to cache..";
-    git config --global credential.helper 'cache --timeout=3600';
-    
-    echo 'done';
+    echo -e "\e[92m>pulling from origin..\e[0m" ;
+        git pull origin master ;
+    echo -e "\e[92m>Status..\e[0m";
+        git status -s;
+    echo -e "\e[92m>Adding to stage area..\e[0m"; 
+        git add --all;
+    echo -e "\e[92m>commiting..\e[0m" ;
+        git commit -m "Up";    
+    echo -e "\e[92m>pushing..\e[0m";
+        git push origin master ;
+    echo -e "\e[92m>setting user authentication to cache..\e[0m" ;
+        git config --global credential.helper 'cache --timeout=3600';
+    echo -e "\e[92m>done!\e[0m";
 }
 
 function addpath() {
