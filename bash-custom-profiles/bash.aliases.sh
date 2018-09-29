@@ -3,12 +3,15 @@ alias sudo='sudo '
 
 function gitup(){
     date=$(date +%Y-%m-%d) && echo $date ;
-    
-    echo 'Dando o pull.. ' && git pull origin master ;
+    echo 'pulling from origin.. ' && git pull origin master ;
     echo 'Status.. ' && git status ;
     echo 'Add to stage area.. ' && git add --all;
     echo 'commiting.. ' && git commit -m "Up";    
     echo 'pushing.. ' && git push origin master ;
+    
+    echo "setting user authentication to cache..";
+    git config --global credential.helper 'cache --timeout=3600';
+    
     echo 'done';
 }
 
