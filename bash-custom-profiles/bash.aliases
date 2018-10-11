@@ -1,5 +1,7 @@
 alias permall='sudo chmod -R 777'
 alias sudo='sudo '
+alias docker='sudo docker'
+alias apt='sudo apt'
 
 function gitup(){
     date=$(date +%Y-%m-%d) && echo $date ;
@@ -43,4 +45,24 @@ function addpath() {
 function cs() { 
     cd "$1"; 
     ls -l;
+}
+
+function startenv (){
+    if [ $# -eq 0 ] 
+        then
+            echo "select a command";
+    else
+        option=$1;
+        if [ $option == "-l" ] 
+            then
+                cd ~/virtualenvs/;
+                ls;
+        fi
+        
+        if [ $option == "-s" ] 
+            then
+                cd ~/virtualenvs/$2/bin/;
+                source activate;
+        fi
+    fi
 }

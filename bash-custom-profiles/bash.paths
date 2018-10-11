@@ -1,5 +1,7 @@
-export PATH=$PATH:/opt/pycharm/bin
 export PATH=$PATH:/opt/arduino
-export PATH=$PATH:/opt/androidStudio/bin
+export PATH=$PATH:/opt/go/bin
+export PATH=$PATH:/opt/pycharm-community/bin
 export PATH=$PATH:/opt/eclipse
-export PATH=$PATH:/opt/node/bin
+export PATH=$PATH:/opt/androidStudio/bin
+export PATH=$PATH:/opt/node10.11.0/bin
+export PATH=$PATH:/opt/intellijIdea/bin
