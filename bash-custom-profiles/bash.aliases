@@ -50,19 +50,28 @@ function cs() {
 function startenv (){
     if [ $# -eq 0 ] 
         then
-            echo "select a command";
+            echo "select a command, press -h to show help";
     else
         option=$1;
         if [ $option == "-l" ] 
             then
-                cd ~/virtualenvs/;
-                ls;
+                ls ~/virtualenvs/;
         fi
         
         if [ $option == "-s" ] 
             then
+                echo 'Starting the environment';
                 cd ~/virtualenvs/$2/bin/;
                 source activate;
+                cd ~/;
+        fi
+        if [ $option == "-h" ] 
+            then
+                echo '-l : List all environment';
+                echo '-s [envname] : start the selected environment';
+                
+                echo 'Enjoy!! writed by Notim_';
+                
         fi
     fi
 }
