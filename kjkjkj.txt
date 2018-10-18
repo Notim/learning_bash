@@ -1,0 +1,3 @@
+xUnit mocks -> whitebox test
+functional tests (BDD and selenium)
+not functional (Jmetter)

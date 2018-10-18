@@ -1,0 +1,32 @@
+docker commands
+
+docker ps -> list process
+
+docker images -> list all images 
+docker pull [image-name:image-version] -> download image from docker hub
+docker rmi [image name or id] -> remove image from local space
+
+
+
+docker container ps -> list containers on
+docker container ps -a -> list all containers (on off)
+docker rm $(docker container ps -a -q) -> delete all containers
+
+
+docker run [image name ] --name "name of container" [comand] [flags]-> create and start a container
+
+docker container start [id or name] -> start a container
+docker container kill  [id or name] -> stop a running container
+docker container exec  [id or name] [comand] -> stop a running container
+
+
+docker container run -d[hide] -p[specifies the port to access] --name(container name) [isoname]
+
+#1 docker container run -d -p 8080:80 --name "my-nginx-container"  nginx
+
+docker login -u "yourhubusername" -p "password"
+
+docker tag [imagename] yourhubusername/imagename:=version
+
+docker push yourhubusername/imagename:=version
+docker pull yourhubusername/imagename:=version
