@@ -1,7 +1,25 @@
+## !! paste this to your bash config (/etc/bash.bashrc)
+# adding functions and aliases file
+#if [ -f /etc/bash.aliases ]; then
+#    source /etc/bash.aliases
+#fi
+
+# adding paths file 
+#if [ -f /etc/bash.paths ]; then
+#    source /etc/bash.paths
+#i
+
+
 alias permall='sudo chmod -R 777'
 alias sudo='sudo '
 alias docker='sudo docker'
 alias apt='sudo apt'
+alias apt-update='sudo apt-update && sudo apt-upgrade'
+
+function cs() { 
+    cd "$1"; 
+    ls -l;
+}
 
 function gitup(){
     date=$(date +%Y-%m-%d) && echo $date ;
@@ -13,11 +31,11 @@ function gitup(){
     echo -e "\e[92m>Adding to stage area..\e[0m"; 
         git add --all;
     echo -e "\e[92m>commiting..\e[0m" ;
-        git commit -m "Up";    
+        git commit -S -m "Up";    
     echo -e "\e[92m>pushing..\e[0m";
         git push origin master ;
     echo -e "\e[92m>setting user authentication to cache..\e[0m" ;
-        git config --global credential.helper 'cache --timeout=3600';
+        git config --global credential.helper 'cache --timeout=15000';
     echo -e "\e[92m>done!\e[0m";
 }
 
@@ -41,10 +59,6 @@ function addpath() {
         source ~/.bashrc;
     fi
     echo "added '$pth' path in bash profile with success!";
-}
-function cs() { 
-    cd "$1"; 
-    ls -l;
 }
 
 function startenv (){
