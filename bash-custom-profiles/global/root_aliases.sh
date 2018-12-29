@@ -1,20 +1,18 @@
-## !! paste this to your bash config (/etc/bash.bashrc)
-# adding functions and aliases file
-#if [ -f /etc/bash.aliases ]; then
-#    source /etc/bash.aliases
-#fi
-
-# adding paths file 
-#if [ -f /etc/bash.paths ]; then
-#    source /etc/bash.paths
-#i
-
+alias ls='ls --color=auto'
 
 alias permall='sudo chmod -R 777'
+alias permweb='sudo chmod -R 755'
+alias permown='sudo chmod -R 700'
+
 alias sudo='sudo '
 alias docker='sudo docker'
 alias apt='sudo apt'
 alias apt-update='sudo apt-update && sudo apt-upgrade'
+
+alias pacman-update='sudo pacman -Syyu'
+alias pacman-search='sudo pacman -Ss'
+alias pacman-remove='sudo pacman -Ss'
+
 
 function cs() { 
     cd "$1"; 
@@ -31,7 +29,7 @@ function gitup(){
     echo -e "\e[92m>Adding to stage area..\e[0m"; 
         git add --all;
     echo -e "\e[92m>commiting..\e[0m" ;
-        git commit -S -m "Up";    
+        git commit -m "Up";    
     echo -e "\e[92m>pushing..\e[0m";
         git push origin master ;
     echo -e "\e[92m>setting user authentication to cache..\e[0m" ;
