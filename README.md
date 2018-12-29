@@ -1,4 +1,4 @@
-##### all commands have ```--help``` or ```-h``` to get more info 
+##### All commands have ```--help``` or ```-h``` to get more info 
 # Newbie Commands
 
 ```cd``` - Changes the current working directory in the command line console. 
@@ -58,7 +58,7 @@
 
 ```tar``` – Creates a .tar archive or extracts from a .tar archive depending on specified parameters.
 
-```zip``` / unzip – Creates a .zip archive or extracts from a .zip archive depending on specified parameters.
+```zip / unzip``` – Creates a .zip archive or extracts from a .zip archive depending on specified parameters.
 
 # Other Noteworthy Commands
 
