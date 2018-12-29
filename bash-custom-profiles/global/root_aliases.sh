@@ -1,8 +1,10 @@
 alias ls='ls --color=auto'
+alias grep='grep --colour=auto'
 
 alias permall='sudo chmod -R 777'
 alias permweb='sudo chmod -R 755'
 alias permown='sudo chmod -R 700'
+
 
 alias sudo='sudo '
 alias docker='sudo docker'
@@ -12,7 +14,6 @@ alias apt-update='sudo apt-update && sudo apt-upgrade'
 alias pacman-update='sudo pacman -Syyu'
 alias pacman-search='sudo pacman -Ss'
 alias pacman-remove='sudo pacman -Ss'
-
 
 function cs() { 
     cd "$1"; 
