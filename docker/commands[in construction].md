@@ -1,18 +1,30 @@
-# docker commands
+# Docker Utils commands
 
-```docker ps``` -> list process
+#### list process
+```shell 
+   docker ps 
+```
+#### list all images 
+```shell
+docker images
+``` 
+#### download image from docker hub
+```shell
+docker pull [image-name:image-version]
+``` 
+#### remove image from local space
+```shell 
+rmi [image name or id]
+```
+#### list containers on
+```shell
+docker container ps
+```
+#### list all containers (on && off)
+```docker container ps -a``` 
 
-```docker images``` -> list all images 
-
-```docker pull [image-name:image-version]``` -> download image from docker hub
-
-```docker rmi [image name or id]``` -> remove image from local space
-
-```docker container ps``` -> list containers on
-
-```docker container ps -a``` -> list all containers (on off)
-
-```docker rm $(docker container ps -a -q)``` -> delete all containers
+#### delete all containers
+```docker rm $(docker container ps -a -q)``` 
 
 ```docker container start [id or name]``` -> start a container
 
