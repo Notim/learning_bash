@@ -1,10 +1,11 @@
+alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
+
 alias ls='ls --color=auto'
 alias grep='grep --colour=auto'
 
 alias permall='sudo chmod -R 777'
 alias permweb='sudo chmod -R 755'
 alias permown='sudo chmod -R 700'
-
 
 alias sudo='sudo '
 alias docker='sudo docker'
@@ -13,7 +14,7 @@ alias apt-update='sudo apt-update && sudo apt-upgrade'
 
 alias pacman-update='sudo pacman -Syyu'
 alias pacman-search='sudo pacman -Ss'
-alias pacman-remove='sudo pacman -Ss'
+alias pacman-remove='sudo pacman -R'
 
 function cs() { 
     cd "$1"; 
@@ -87,4 +88,15 @@ function startenv (){
                 
         fi
     fi
+}
+
+#To use on PS !!
+function getGitBranch() {
+	BRANCH=`git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/'`
+	if [ ! "${BRANCH}" == "" ]
+	then
+		echo "${BRANCH} "
+	else
+		echo ""
+	fi
 }
