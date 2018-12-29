@@ -1,80 +1,80 @@
 # Docker Utils commands
 
 #### List process
-```bash 
+```console 
 docker ps 
 ```
 #### List all images 
-```bash
+```console
 docker images
 ``` 
 #### Download image from docker hub
-```bash
+```console
 docker pull [image-name:image-version]
 ``` 
 #### Remove image from local space
-```bash 
+```console 
 rmi [image name or id]
 ```
 #### List containers on
-```bash
+```console
 docker container ps
 ```
 #### List all containers (on && off)
-```bash
+```console
 docker container ps -a
 ``` 
 #### Delete all containers
-```bash
+```console
 docker rm $(docker container ps -a -q)
 ``` 
 #### start a container
-```bash
+```console
 docker container start [id or name]
 ```
 #### stop a running container
-```bash
+```console
 docker container kill  [id or name]
 ``` 
 #### run a program in running container
-```bash
+```console
 docker container exec [-it or -d] [container id or name] [command]
 ``` 
 #### commom structure to make your container with an iso
-```bash
+```console
 docker container run --name [container-name] (-d [hide] or -it [enter interactive tty]) -p [specifies the port to access him (selfport:container-app-port) ] -e [environment special parameters] [isoname] [command to run on start, if empty his gone start with default command]
 ``` 
 
 #### to enter on your dockerhub account
-```bash
+```console
 docker login -u "yourhubusername" -p "password"
 ``` 
 
 #### naming an image 
-```bash
+```console
 docker tag [imagename] yourhubusername/imagename:=version
 ```
 #### push your image to dockerhub 
-```bash
+```console
 docker push yourhubusername/imagename:=version
 ```
 #### push your image for dockerhub 
-```bash
+```console
 docker pull yourhubusername/imagename:=version
 ```
 # utils first Data Base programs to run in containers
 
 #### mysql
-```bash
+```console
 docker run --name "container-mysql" -p 0.0.0.0:8050:3306 -e MYSQL_ROOT_PASSWORD="YourPasswordHere123" -d mysql mysqld --default-authentication-plugin=mysql_native_password
 ```
 
 #### microsoft sqlserver
-```bash
+```console
 docker run --name "container-sqlserver" -p 0.0.0.0:8051:1433 -e ACCEPT_EULA=Y -e SA_PASSWORD=YourPasswordHere123 -d microsoft/mssql-server-linux 
 ```
 
 #### postgres
-```bash
+```console
 docker run --name "container-postgres" -p 0.0.0.0:8052:5432 -e POSTGRES_PASSWORD="YourPasswordHere123" -d postgres
 ```
