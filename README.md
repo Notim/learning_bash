@@ -65,11 +65,13 @@
 ```apt-get``` – Advanced Packaging Tool. Use this command to install, remove, and configure software packages on your system. For a menu-based version, use aptitude command. Available on Debian-based Linux distributions.
 
 ```pacman``` – Advanced Packaging Tool. Use this command to install, remove, and configure software packages on your system. For a menu-based version, Available on Arch linux Linux distributions.
+
 ```ftp / sftp``` – Connects to a remote FTP server in order to download multiple files.
 
 ```wget``` – Downloads files from the Internet at the specified URL to your system.
 
 ```yum``` – Yellowdog Updater, Modified. An open source package manager used to easily install software packages from repositories. Available on RPM-compatible Linux distributions.
+
 ```emacs``` – One of the most well-known text editors on Unix-like systems.
 
 ```nano``` – A newbie-friendly (my favourite :o) command-line text editor that uses keyboard shortcuts to simulate menus.
