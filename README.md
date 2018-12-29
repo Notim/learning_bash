@@ -14,6 +14,7 @@
 ```ls``` – List all of the contents of a specified directory. If no directory is specified, it will use the current directory.
 
 ```exit``` – Exits out of the current program, terminates the current command line terminal, or logs you out of a Unix network depending on the context.
+
 ```kill``` – Terminates the specified running process. The Linux version of Windows’ “End Process” in the task manager.
 
 ```man``` – There’s a running gag in the Linux community that man is the only command you need to know. It stands for manual, and it will give you detailed information on commands and aspects of Linux.
