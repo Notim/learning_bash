@@ -1,4 +1,4 @@
-cd – Changes the current working directory in the command line console.
+cd - Changes the current working directory in the command line console. 
 
 exit – Exits out of the current program, terminates the current command line terminal, or logs you out of a Unix network depending on the context.
 
