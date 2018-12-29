@@ -1,53 +1,80 @@
 # Docker Utils commands
 
-#### list process
-```shell 
-   docker ps 
+#### List process
+```bash 
+docker ps 
 ```
-#### list all images 
-```shell
+#### List all images 
+```bash
 docker images
 ``` 
-#### download image from docker hub
-```shell
+#### Download image from docker hub
+```bash
 docker pull [image-name:image-version]
 ``` 
-#### remove image from local space
-```shell 
+#### Remove image from local space
+```bash 
 rmi [image name or id]
 ```
-#### list containers on
-```shell
+#### List containers on
+```bash
 docker container ps
 ```
-#### list all containers (on && off)
-```docker container ps -a``` 
+#### List all containers (on && off)
+```bash
+docker container ps -a
+``` 
+#### Delete all containers
+```bash
+docker rm $(docker container ps -a -q)
+``` 
+#### start a container
+```bash
+docker container start [id or name]
+```
+#### stop a running container
+```bash
+docker container kill  [id or name]
+``` 
+#### run a program in running container
+```bash
+docker container exec [-it or -d] [container id or name] [command]
+``` 
+#### commom structure to make your container with an iso
+```bash
+docker container run --name [container-name] (-d [hide] or -it [enter interactive tty]) -p [specifies the port to access him (selfport:container-app-port) ] -e [environment special parameters] [isoname] [command to run on start, if empty his gone start with default command]
+``` 
 
-#### delete all containers
-```docker rm $(docker container ps -a -q)``` 
+#### to enter on your dockerhub account
+```bash
+docker login -u "yourhubusername" -p "password"
+``` 
 
-```docker container start [id or name]``` -> start a container
+#### naming an image 
+```bash
+docker tag [imagename] yourhubusername/imagename:=version
+```
+#### push your image to dockerhub 
+```bash
+docker push yourhubusername/imagename:=version
+```
+#### push your image for dockerhub 
+```bash
+docker pull yourhubusername/imagename:=version
+```
+# utils first Data Base programs to run in containers
 
-```docker container kill  [id or name]``` -> stop a running container
+#### mysql
+```bash
+docker run --name "container-mysql" -p 0.0.0.0:8050:3306 -e MYSQL_ROOT_PASSWORD="TopZeraAdmin123" -d mysql mysqld --default-authentication-plugin=mysql_native_password
+```
 
-```docker container exec [-it or -d] [container id or name] [command]``` -> run a program in running container
+#### microsoft sqlserver
+```bash
+docker run --name "container-sqlserver" -p 0.0.0.0:8051:1433 -e ACCEPT_EULA=Y -e SA_PASSWORD=TopZeraAdmin123 -d microsoft/mssql-server-linux 
+```
 
-```docker container run --name [container-name] (-d [hide] or -it [enter interactive tty]) -p [specifies the port to access him (selfport:container-app-port) ] -e [environment special parameters] [isoname] [command to run on start, if empty his gone start with default command]``` -> commom structure to make your container with an iso
- 
-```docker login -u "yourhubusername" -p "password"``` -> to enter on your dockerhub account (duurr)
-
-```docker tag [imagename] yourhubusername/imagename:=version```
-
-```docker push yourhubusername/imagename:=version```
-
-```docker pull yourhubusername/imagename:=version```
-
-# utils first DBM programs to run in containers
-
-```docker run --name "container-mysql" -p 0.0.0.0:8050:3306 -e MYSQL_ROOT_PASSWORD="TopZeraAdmin123" -d mysql mysqld --default-authentication-plugin=mysql_native_password```
-
-```docker run --name "container-sqlserver" -p 0.0.0.0:8051:1433 -e ACCEPT_EULA=Y -e SA_PASSWORD=TopZeraAdmin123 -d microsoft/mssql-server-linux ```
-
-```docker run --name "container-postgres" -p 0.0.0.0:8052:5432 -e POSTGRES_PASSWORD="TopZeraAdmin123" -d postgres```
-
-
+#### postgres
+```bash
+docker run --name "container-postgres" -p 0.0.0.0:8052:5432 -e POSTGRES_PASSWORD="TopZeraAdmin123" -d postgres
+```
