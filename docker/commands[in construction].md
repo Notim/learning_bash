@@ -66,15 +66,15 @@ docker pull yourhubusername/imagename:=version
 
 #### mysql
 ```bash
-docker run --name "container-mysql" -p 0.0.0.0:8050:3306 -e MYSQL_ROOT_PASSWORD="TopZeraAdmin123" -d mysql mysqld --default-authentication-plugin=mysql_native_password
+docker run --name "container-mysql" -p 0.0.0.0:8050:3306 -e MYSQL_ROOT_PASSWORD="YourPasswordHere123" -d mysql mysqld --default-authentication-plugin=mysql_native_password
 ```
 
 #### microsoft sqlserver
 ```bash
-docker run --name "container-sqlserver" -p 0.0.0.0:8051:1433 -e ACCEPT_EULA=Y -e SA_PASSWORD=TopZeraAdmin123 -d microsoft/mssql-server-linux 
+docker run --name "container-sqlserver" -p 0.0.0.0:8051:1433 -e ACCEPT_EULA=Y -e SA_PASSWORD=YourPasswordHere123 -d microsoft/mssql-server-linux 
 ```
 
 #### postgres
 ```bash
-docker run --name "container-postgres" -p 0.0.0.0:8052:5432 -e POSTGRES_PASSWORD="TopZeraAdmin123" -d postgres
+docker run --name "container-postgres" -p 0.0.0.0:8052:5432 -e POSTGRES_PASSWORD="YourPasswordHere123" -d postgres
 ```
