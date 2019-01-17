@@ -15,27 +15,41 @@ alias apt-update='sudo apt-update && sudo apt-upgrade'
 alias pacman-update='sudo pacman -Syyu'
 alias pacman-search='sudo pacman -Ss'
 alias pacman-remove='sudo pacman -R'
+alias pacman-unused='sudo pacman -Rns $(pacman -Qtdq)'
 
 function cs() { 
     cd "$1"; 
     ls -l;
 }
 
+function clearmem() {
+    sudo sh -c 'echo 3 > /proc/sys/vm/drop_caches' ; 
+    sudo sh -c 'swapoff -a && swapon -a' ; 
+    printf '\n%s\n' 'Ram-cache and Swap Cleared'
+} 
+
 function gitup(){
+
     date=$(date +%Y-%m-%d) && echo $date ;
     
-    echo -e "\e[92m>pulling from origin..\e[0m" ;
-        git pull origin master ;
-    echo -e "\e[92m>Status..\e[0m";
-        git status -s;
+    echo -e "\e[92m>pulling from origin..\e[0m" ; 
+    git pull origin master ;
+    
+    echo -e "\e[92m>Status..\e[0m"; 
+    git status -s;
+    
     echo -e "\e[92m>Adding to stage area..\e[0m"; 
-        git add --all;
-    echo -e "\e[92m>commiting..\e[0m" ;
-        git commit -m "Up";    
-    echo -e "\e[92m>pushing..\e[0m";
-        git push origin master ;
-    echo -e "\e[92m>setting user authentication to cache..\e[0m" ;
-        git config --global credential.helper 'cache --timeout=15000';
+    git add --all;
+    
+    echo -e "\e[92m>commiting..\e[0m" ; 
+    git commit -m "Up";    
+    
+    echo -e "\e[92m>pushing..\e[0m"; 
+    git push origin master ;
+    
+    echo -e "\e[92m>setting user authentication to cache..\e[0m" ; 
+    git config --global credential.helper 'cache --timeout=15000';
+    
     echo -e "\e[92m>done!\e[0m";
 }
 

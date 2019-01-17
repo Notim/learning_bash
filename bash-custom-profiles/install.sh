@@ -5,7 +5,7 @@ count="$(grep -o 'already-installed' /etc/bash.bashrc | wc -l)";
 
 if [[ "$count" != "0" ]]; then
     echo -e "\e[92mthat is already installed ! thank you\e[0m" ;
-    return
+    exit
 fi
 
 # welcome message, in realy is only to force user enter with sudo password    
