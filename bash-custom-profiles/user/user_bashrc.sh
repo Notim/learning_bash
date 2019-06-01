@@ -20,7 +20,3 @@ function parse_git_branch() {
 		echo ""
 	fi
 }
-
-
-
-

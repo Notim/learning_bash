@@ -12,11 +12,10 @@ alias docker='sudo docker'
 alias apt='sudo apt'
 alias apt-update='sudo apt-update && sudo apt-upgrade'
 
-alias yay-update='yay -Syyu --sudoloop --noconfirm'
-alias yay-search='yay -Ss'
-alias yay-remove='yay -R'
-alias yay-unused='yay -Rns $(pacman -Qtdq)'
-alias yay-install='yay -S --sudoloop --noconfirm'
+alias pacman-update='sudo pacman -Syyu'
+alias pacman-search='sudo pacman -Ss'
+alias pacman-remove='sudo pacman -R'
+alias pacman-unused='sudo pacman -Rns $(pacman -Qtdq)'
 
 function cs() { 
     cd "$1"; 
