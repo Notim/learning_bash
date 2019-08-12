@@ -14,11 +14,10 @@ RUN pip install flask
 
 EXPOSE 443 5000
 
-COPY main.py /var/projetcs/main.py
+COPY . /var/projetcs/
 CMD [ "python", "/var/projetcs/main.py" ]
 
 
 # docker build -t flask .
 # docker run -it --rm --name teste-container-flask flask /bin/bash
 MAINTAINER joao.paulino@sinctec.com.br
-

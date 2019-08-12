@@ -1,15 +1,14 @@
 #!/usr/bin/python
-from flask import Flask
+from flask import Flask, render_template
 
 app = Flask(__name__)
 
 
 @app.route('/')
 def root():  
-    html = ""
-    html +="<h1>Aplicacao Flask Aqui oh!!!</h1>"
-    html +="<img src='https://cdn-images-1.medium.com/max/1600/1*wigcg2cOMdiqq3y2Qrgk2w.png' />"
-    return html, 200
+
+    return render_template('home.html'), 200
+
 
 if __name__ == '__main__':
     app.run(

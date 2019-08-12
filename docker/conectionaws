@@ -1,1 +1,2 @@
 ssh -i pass.key ubuntu@ec2-34-238-39-122.compute-1.amazonaws.com
+ssh -i pass.key ubuntu@ec2-34-227-20-217.compute-1.amazonaws.com

@@ -1,0 +1,118 @@
+<!doctype html>
+
+  
+<title>Welcome | Flask (A Python Microframework)</title>
+<meta charset=utf-8>
+<link rel=stylesheet type=text/css href="http://flask.pocoo.org/static/style.css">
+<link rel="shortcut icon" href="http://flask.pocoo.org/static/favicon.ico">
+<script type=text/javascript
+  src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+
+  <style type=text/css>
+    h1 { margin: 0 0 30px 0; background: url(http://flask.pocoo.org/static/logo.png) no-repeat center; height: 165px; }
+    h1 span, p.tagline { display: none; }
+  </style>
+  <script type=text/javascript>
+    $(function() {
+      $('h1').bind('mousedown contextmenu', function(event) {
+        if (event.button != 2)
+          return;
+        var box = $('div.logohint');
+        if (!box.is(':visible'))
+          box.animate({'height': 'show', 'opacity': 'show'}, 100);
+        event.preventDefault();
+        event.returnValue = false;
+        return false;
+      });
+    });
+  </script>
+
+<div class=box>
+  
+  
+    <h1><span>Welcome</span></h1>
+  
+  <p class=tagline>because sometimes a pocket knife is not enough
+  <div class=logohint style="display: none">
+    <p>
+      Are you interested in the logo?  We have it available in large versions so
+      please if you use it head over to the <a href="http://flask.pocoo.org/community/logos/">logo
+      page</a> for the logo and the usage guidelines.
+    <p>
+      Quicklinks: <a href="http://flask.pocoo.org/static/logo/flask.png">PNG</a>
+      and <a href="http://flask.pocoo.org/static/logo/flask.eps">EPS</a>
+  </div>
+
+  <p class=nav>
+    <a href="http://flask.pocoo.org/">overview</a> //
+    <a href="http://flask.pocoo.org/docs/">docs</a> //
+    <a href="http://flask.pocoo.org/community/">community</a> //
+    <a href="http://flask.pocoo.org/extensions/">extensions</a> //
+    <a href="https://psfmember.org/civicrm/contribute/transact?reset=1&id=20">donate</a>
+  
+  
+  <blockquote>
+    Flask is a microframework for Python based on Werkzeug, Jinja 2 and good intentions.
+    And before you ask: It's <a href="http://flask.pocoo.org/docs/license/">BSD licensed</a>!
+  </blockquote>
+  <p class=latestver>
+    <strong>Latest Version:</strong>
+    <a href="https://pypi.org/project/Flask/1.0.2/">1.0.2</a>
+  <h2>Flask is Fun</h2>
+  <pre><span class=ig>from flask import Flask
+app = Flask(__name__)</span>
+
+@app.route("/")
+def hello():
+    return "Hello World!"
+</pre>
+  <h2>And Easy to Setup</h2>
+  <pre><span class=ig>$ </span>pip install Flask
+<span class=ig>$ </span>FLASK_APP=hello.py flask run
+<span class=ig> * Running on http://localhost:5000/</span></pre>
+  <iframe src="http://ghbtns.com/github-btn.html?user=pallets&amp;repo=flask&amp;type=watch&amp;count=true&amp;size=large" width="190" height="35" style="float: right;border: none"></iframe>
+  <h2>Interested?</h2>
+  <ul>
+    <li><a href="https://pypi.org/project/Flask/1.0.2/">Download latest release</a> (1.0.2)
+    <li><a href="http://flask.pocoo.org/docs/">Read the documentation</a>
+    <li><a href="http://flask.pocoo.org/mailinglist/">Join the mailinglist</a>
+    <li><a href=https://github.com/pallets/flask>Fork it on github</a>
+    <li><a href=https://github.com/pallets/flask/issues>Add issues and feature requests</a>
+  </ul>
+  <h2>What’s in the Box?</h2>
+  <ul>
+    <li>built-in development server and <a href="http://flask.pocoo.org/docs/quickstart/#debug-mode">debugger</a>
+    <li>integrated <a href="/docs/testing/">unit testing support</a>
+    <li>RESTful <a href="/docs/quickstart/#routing">request dispatching</a>
+    <li>uses <a href=http://jinja.pocoo.org/docs/>Jinja2 templating</a>
+    <li>support for <a href="/docs/quickstart/#sessions">secure cookies</a> (client side sessions)
+    <li>100% <a href=http://www.python.org/dev/peps/pep-0333/>WSGI 1.0</a> compliant
+    <li>Unicode based
+    <li>extensively <a href="/docs/">documented</a>
+  </ul>
+  <h2>What do Flask Apps look like?</h2>
+  <p>
+    If you are looking for some example code of applications written with Flask,
+    have a look at the sources of the examples on github:
+  <ul>
+    <li><a href=https://github.com/pallets/flask/tree/master/examples/tutorial/>flaskr</a>
+      — a microblog
+    <li><a href=https://github.com/pallets/flask-website>this website</a>
+      — static pages + mailinglist archives
+  </ul>
+  <h2>Contribute</h2>
+  <p>Found a bug? Have a good idea for improving Flask? Head over to
+    <a href=https://github.com/pallets/flask>Flask's github</a> page and
+    create a new ticket or fork.  If you just want to chat with fellow
+    developers, visit <a href="/community/irc/">the IRC
+    channel</a> or join <a href="/mailinglist/"
+    >the mailinglist</a>.  You can also directly add issues and feature
+    requests to the <a href="https://github.com/pallets/flask/issues">
+    issue tracker</a>.
+
+<a href="https://github.com/pallets/flask"><img style="position: fixed; top: 0; right: 0; border: 0;"
+  src="http://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png" alt="Fork me on GitHub"></a>
+
+  <p class=footer>
+    &copy; Copyright 2010 - 2019 by <a href=http://lucumr.pocoo.org/>Armin Ronacher</a>
+</div> 

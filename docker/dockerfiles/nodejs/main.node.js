@@ -1,5 +1,12 @@
-var express = require('express');
-var app = express();
+let express = require('express');
+
+let app = express();
+app.set('view engine', 'vash');
+
+let tpl = require('my-awesome-template.vash');
+
+let html = tpl();
+console.log(html);
 
 app.get(
     '/', 
